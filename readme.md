@@ -27,6 +27,12 @@ CREATE TABLE products (
   about VARCHAR(500),
   price FLOAT
 );
+
+CREATE TABLE publisher (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100)
+  location VARCHAR(100)
+);
 ```
 Then, you will need to specify your credentials in the environement variables (`.env`). (An exemple should be provided in the project(see `.env.exemple`))
 
@@ -42,8 +48,8 @@ To run the tests, you can run the command `node ./client.js`.
 Here are some of the feature i'd like to try and implement in my project:
 
 - ✔ Basic implementation (GET, POST, PATCH, DELETE)
-- ✖ Create other service in other files
-- ✖ Multiple files for the server to seperate endpoint for every entity
-- ✖ Try out tables with foreign keys
+- ✔ Create other service in other files
+- ✔ Multiple files for the server to seperate endpoint for every entity
+- ✖ Try out tables with foreign keys (One to One, Many to Many,...)
 
 

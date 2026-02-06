@@ -7,39 +7,52 @@
     <!-- ~~ Structure ~~ -->
     <types>
         <xsd:schema targetNamespace="http://localhost:8000/publisher">
+            <!-- # Création de publisher # -->
+            <!-- Requête -->
             <xsd:element name="CreatePublisherRequest">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="name" type="xsd:string" />
-                        <xsd:element name="origin" type="xsd:string" />
+                        <xsd:element name="location" type="xsd:string" />
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
+            <!-- Réponse -->
             <xsd:element name="CreatePublisherResponse">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="id" type="string" />
                         <xsd:element name="name" type="string" />
-                        <xsd:element name="origin" type="string"/>
+                        <xsd:element name="location" type="string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
         </xsd:schema>
     </types>
+
+    <!-- ~~ Message ~~ -->
+    <!-- # Message de création de Publisher # -->
     <message name="CreatePublisherRequestMessage">
         <part name="request" element="tns:CreatePublisherRequest"/>
     </message>
     <message name="CreatePublisherResponseMessage">
         <part name="response" element="tns:CreatePublisherResponse"/>
     </message>
+
+    <!-- ~~ Requête ~~ -->
     <portType name="PublisherPortType">
+        <!-- # Requête de création de Publisher # -->
         <operation name="CreatePublisher">
             <input message="tns:CreatePublisherRequestMessage"/>
             <output message="tns:CreatePublisherResponseMessage"/>
         </operation>
     </portType>
+
+    <!-- ~~ Configuration ~~ -->
     <binding  name="PublisherBinding" type="tns:PublisherPortType">
         <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <!-- # Configuration de création de Publisher # -->
         <operation name="CreatePublisher">
             <input>
                 <soap:body use="encoded" namespace="http://localhost:8000/publisher"
@@ -51,6 +64,8 @@
             </output>
         </operation>
     </binding>
+
+    <!-- ~~ Définition du service ~~ -->
     <service name="PublisherService">
         <port name="PublisherPort" binding="tns:PublisherBinding">
             <soap:address location="http://localhost:8000/publisher"/>
