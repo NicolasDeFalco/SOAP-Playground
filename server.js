@@ -14,7 +14,7 @@ const server = http.createServer(function (request, response) {
 server.listen(8000);
 
 // Create the SOAP server
-const xml = fs.readFileSync("productsService.wsdl", "utf8");
+const xml = fs.readFileSync("config/productsService.wsdl", "utf8");
 soap.listen(server, "/products", products, xml, function () {
   console.log("SOAP server for Products running at http://localhost:8000/products?wsdl");
 });
