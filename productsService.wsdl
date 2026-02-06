@@ -211,7 +211,7 @@
         </operation>
     </binding>
 
-    <!-- Définition du service -->
+    <!-- ~~ Définition du service ~~ -->
     <service name="ProductsService">
         <port name="ProductsPort" binding="tns:ProductsBinding">
             <soap:address location="http://localhost:8000/products" />
