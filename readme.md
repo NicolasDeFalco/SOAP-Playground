@@ -1,4 +1,4 @@
-# **SOAP Test**
+# **SOAP Playground**
 
 This project has for aim to try out the SOAP protocole and get a better a better understanding of it.
 
