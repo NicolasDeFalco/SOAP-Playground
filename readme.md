@@ -41,7 +41,7 @@ To run the project, simply run `npm install` to retreive all the packages.
 
 When it's done, run the project with the command `npx run ./server.js`.
 
-To run the tests, you can run the command `node ./client.js`.
+To run the tests, you can run the command `node ./test/client.js` or `node ./test/publisher.js`.
 
 ## Todo list
 
