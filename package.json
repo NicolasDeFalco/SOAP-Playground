@@ -1,0 +1,20 @@
+{
+  "name": "test-soap",
+  "version": "0.0.1",
+  "description": "Trying out the soap protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "test-soap"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "postgres": "^3.4.8",
+    "soap": "^1.6.1"
+  }
+}
